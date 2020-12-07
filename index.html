@@ -123,35 +123,6 @@
     </div>
   </body>
   <script>
-    let mobileNumber = document.getElementById("mobilenumber");
-    let countryCode = document.getElementById("code");
-    let submit = document.getElementById("submit");
-    countryCode.value = 91;
-    let mobileNumber_input, countryCode_input;
-
-    submit.addEventListener("click", () => {
-      let is_valid = false;
-      if (mobileNumber.value === "") {
-        mobileNumber.classList.add("border-error");
-        is_valid = false;
-        return;
-      } else {
-        mobileNumber.classList.remove("border-error");
-        is_valid = true;
-      }
-      if (countryCode.value === "") {
-        countryCode.classList.add("border-error");
-        is_valid = false;
-        return;
-      } else {
-        countryCode.classList.remove("border-error");
-        is_valid = true;
-      }
-      if (is_valid) {
-        window.location.replace(
-          "whatsapp://send/?phone=" + countryCode.value + mobileNumber.value
-        );
-      }
-    });
+    const _0xbc99=['remove','getElementById','value','classList','submit','mobilenumber','replace','click','add','border-error','location'];(function(_0x1b4749,_0x3cd01b){const _0xbc99a0=function(_0x1d75e9){while(--_0x1d75e9){_0x1b4749['push'](_0x1b4749['shift']());}};_0xbc99a0(++_0x3cd01b);}(_0xbc99,0xc1));const _0x1d75=function(_0x1b4749,_0x3cd01b){_0x1b4749=_0x1b4749-0x81;let _0xbc99a0=_0xbc99[_0x1b4749];return _0xbc99a0;};const _0x15fc4a=_0x1d75;let mobileNumber=document['getElementById'](_0x15fc4a(0x8b)),countryCode=document[_0x15fc4a(0x87)]('code'),submit=document[_0x15fc4a(0x87)](_0x15fc4a(0x8a));countryCode[_0x15fc4a(0x88)]=0x5b;let mobileNumber_input,countryCode_input;submit['addEventListener'](_0x15fc4a(0x82),()=>{const _0x5689b2=_0x15fc4a;let _0x39f899=![];if(mobileNumber[_0x5689b2(0x88)]===''){mobileNumber[_0x5689b2(0x89)][_0x5689b2(0x83)](_0x5689b2(0x84)),_0x39f899=![];return;}else mobileNumber[_0x5689b2(0x89)][_0x5689b2(0x86)](_0x5689b2(0x84)),_0x39f899=!![];if(countryCode[_0x5689b2(0x88)]===''){countryCode[_0x5689b2(0x89)][_0x5689b2(0x83)](_0x5689b2(0x84)),_0x39f899=![];return;}else countryCode[_0x5689b2(0x89)][_0x5689b2(0x86)](_0x5689b2(0x84)),_0x39f899=!![];_0x39f899&&window[_0x5689b2(0x85)][_0x5689b2(0x81)]('whatsapp://send/?phone='+countryCode[_0x5689b2(0x88)]+mobileNumber[_0x5689b2(0x88)]);});
   </script>
 </html>
