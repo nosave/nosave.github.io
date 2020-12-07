@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Send message to any Unsaved in whatsapp without Adding Contact">
+    <meta name="keywords" content="Send Message to Unsaved Number Without Adding Contact">
+    <meta name="author" content="Mohamed Sulaimaan Sheriff">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WhatsApp | Send Message to Unsaved Number Without Adding Contact</title>
+    <link rel="shortcut icon" href="./favicon.png" type="image/x-icon">
+    <style>
+      *{        
+        margin:0;
+      }
+      body {
+        background: url("./background.jpg") ;
+        font-family: "Segoe UI,Helvetica Neue,Helvetica,Lucida Grande,Arial,Ubuntu,Cantarell,Fira Sans,sans-serif";
+      }
+
+      /* Chrome, Safari, Edge, Opera */
+      input::-webkit-outer-spin-button,
+      input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+
+      /* Firefox */
+      input[type="number"] {
+        -moz-appearance: textfield;
+      }
+
+      .section {
+        position: relative;
+      }
+      .section {
+        margin: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-right: -50%;
+        transform: translate(-50%, -50%);
+      }
+      .cmn {
+        padding: 20px 20px 20px 20px;
+      }
+
+      .border-error {
+        border: 2px solid red;
+      }
+      input{
+        border: none;
+        border-radius: 5px;
+        background-color: #fff;
+        font-family: "Segoe UI,Helvetica Neue,Helvetica,Lucida Grande,Arial,Ubuntu,Cantarell,Fira Sans,sans-serif";
+        font-size: 15px;
+      }
+      button{
+        background-color: #fff;
+        border: none;
+        border-radius: 5px;
+      }
+      .code {
+        padding-top: 20px;
+        padding-bottom: 20px;
+        width: 50px;
+        text-align: center  ;
+      }
+      .btn {
+        cursor: pointer;
+        background: url("./icon.png") no-repeat left center;
+        padding: 30px 30px 20px 20px;
+        background-size: 50px 50px;
+        
+      }
+
+      header{
+        height:35px;
+        background-color: #00bfa5;
+      }
+
+      @media only screen and (max-width: 600px) {
+        .cmn-mobile {
+          padding: 20px 5px 20px 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+
+    </header>
+    <div class="section">
+      <input
+        class="code"
+        type="number"
+        id="code"
+        maxlength="5"
+        oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+        placeholder="code"
+        tabindex="1"
+      />
+      <input
+        type="number"
+        autofocus
+        id="mobilenumber"
+        class="cmn cmn-mobile"
+        placeholder="whatsapp number"
+        tabindex="2"
+      />
+
+      <button class="btn" tabindex="3" id="submit">
+        
+      </button>
+    </div>
+  </body>
+  <script>
+    let mobileNumber = document.getElementById("mobilenumber");
+    let countryCode = document.getElementById("code");
+    let submit = document.getElementById("submit");
+    countryCode.value = 91;
+    let mobileNumber_input, countryCode_input;
+
+    submit.addEventListener("click", () => {
+      let is_valid = false;
+      if (mobileNumber.value === "") {
+        mobileNumber.classList.add("border-error");
+        is_valid = false;
+        return;
+      } else {
+        mobileNumber.classList.remove("border-error");
+        is_valid = true;
+      }
+      if (countryCode.value === "") {
+        countryCode.classList.add("border-error");
+        is_valid = false;
+        return;
+      } else {
+        countryCode.classList.remove("border-error");
+        is_valid = true;
+      }
+      if (is_valid) {
+        window.location.replace(
+          "whatsapp://send/?phone=" + countryCode.value + mobileNumber.value
+        );
+      }
+    });
+  </script>
+</html>
